@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/base-mail/base-mail.iml" filepath="$PROJECT_DIR$/base-mail/base-mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-mybatis/base-mybatis.iml" filepath="$PROJECT_DIR$/base-mybatis/base-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-util/base-util.iml" filepath="$PROJECT_DIR$/base-util/base-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework.iml" filepath="$PROJECT_DIR$/framework.iml" />
+    </modules>
+  </component>
+</project>

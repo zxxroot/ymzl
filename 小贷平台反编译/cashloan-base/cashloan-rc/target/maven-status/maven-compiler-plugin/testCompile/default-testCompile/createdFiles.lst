@@ -1,0 +1,5 @@
+com\dev\base\json\Status.class
+com\dev\base\concurrent\User.class
+com\dev\base\utils\bean\BeanTest.class
+com\dev\base\utils\bean\User.class
+com\dev\base\utils\bean\Addr.class

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cashloan.iml" filepath="$PROJECT_DIR$/cashloan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cashloan-cl/cashloan-cl.iml" filepath="$PROJECT_DIR$/cashloan-cl/cashloan-cl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cashloan-core/cashloan-core.iml" filepath="$PROJECT_DIR$/cashloan-core/cashloan-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cashloan-cr/cashloan-cr.iml" filepath="$PROJECT_DIR$/cashloan-cr/cashloan-cr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cashloan-rc/cashloan-rc.iml" filepath="$PROJECT_DIR$/cashloan-rc/cashloan-rc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cashloan-rule/cashloan-rule.iml" filepath="$PROJECT_DIR$/cashloan-rule/cashloan-rule.iml" />
+    </modules>
+  </component>
+</project>

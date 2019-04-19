@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- check_app_version表:App版本控制模块 -->
+<mapper namespace="com.rongdu.cashloan.system.mapper.CheckAppVersionMapper">
+    <!--返回Map-->        
+    <resultMap id="BaseResultMap" type="com.rongdu.cashloan.system.domain.CheckAppVersion">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="min_version" property="minVersion" jdbcType="VARCHAR" />
+        <result column="final_version" property="finalVersion" jdbcType="VARCHAR" />
+        <result column="os_type" property="osType" jdbcType="VARCHAR" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="download_url" property="downloadUrl" jdbcType="VARCHAR" />
+        <result column="detail_page" property="detailPage" jdbcType="VARCHAR" />
+        <result column="upgrade" property="upgrade" jdbcType="BIT" />
+        <result column="create_time" property="createTime" jdbcType="DATE" />
+        <result column="update_time" property="updateTime" jdbcType="DATE" />
+    </resultMap>
+    
+    <!--基本的sql查询字段 公共引用...-->
+    <sql id="Base_Column_List">
+        id,min_version,final_version,os_type,title,content,download_url,detail_page,upgrade,create_time,update_time 
+    </sql>
+    
+    <!-- 基本的sql查询条件公共引用 -->
+    <sql id="searchBy">
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test=" id != null and id != '' ">
+                id  = #{id,jdbcType=INTEGER}
+            </if>
+            <if test="minVersion != null and minVersion != '' ">
+                and min_version = #{minVersion,jdbcType=VARCHAR}
+            </if>
+            <if test="finalVersion != null and finalVersion != '' ">
+                and final_version = #{finalVersion,jdbcType=VARCHAR}
+            </if>
+            <if test="osType != null and osType != '' ">
+                and os_type = #{osType,jdbcType=VARCHAR}
+            </if>
+            <if test="title != null and title != '' ">
+                and title = #{title,jdbcType=VARCHAR}
+            </if>
+            <if test="content != null and content != '' ">
+                and content = #{content,jdbcType=VARCHAR}
+            </if>
+            <if test="downloadUrl != null and downloadUrl != '' ">
+                and download_url = #{downloadUrl,jdbcType=VARCHAR}
+            </if>
+            <if test="detailPage != null and detailPage != '' ">
+                and detail_page = #{detailPage,jdbcType=VARCHAR}
+            </if>
+            <if test="upgrade != null and upgrade != '' ">
+                and upgrade = #{upgrade,jdbcType=INTEGER}
+            </if>
+            <if test="createTime != null and createTime != '' ">
+                and create_time = #{createTime,jdbcType=TIMESTAMP}
+            </if>
+            <if test="updateTime != null and updateTime != '' ">
+                and update_time = #{updateTime,jdbcType=TIMESTAMP}
+            </if>
+        </trim>
+    </sql>
+    
+    
+    <insert id="save" parameterType="com.rongdu.cashloan.system.domain.CheckAppVersion">
+        insert into check_app_version(min_version,final_version,os_type,title,content,download_url,detail_page,upgrade,create_time,update_time)values(#{minVersion,jdbcType=VARCHAR},#{finalVersion,jdbcType=VARCHAR},#{osType,jdbcType=VARCHAR},#{title,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR},#{downloadUrl,jdbcType=VARCHAR},#{detailPage,jdbcType=VARCHAR},#{upgrade,jdbcType=INTEGER},#{createTime,jdbcType=TIMESTAMP},#{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    
+    <update id="update" parameterType="com.rongdu.cashloan.system.domain.CheckAppVersion">
+        update check_app_version set 
+            min_version = #{minVersion,jdbcType=VARCHAR},
+            final_version = #{finalVersion,jdbcType=VARCHAR},
+            os_type = #{osType,jdbcType=VARCHAR},
+            title = #{title,jdbcType=VARCHAR},
+            content = #{content,jdbcType=VARCHAR},
+            download_url = #{downloadUrl,jdbcType=VARCHAR},
+            detail_page = #{detailPage,jdbcType=VARCHAR},
+            upgrade = #{upgrade,jdbcType=INTEGER},
+            update_time = #{updateTime,jdbcType=TIMESTAMP}
+        where id = #{id ,jdbcType=INTEGER}
+    </update>
+
+
+    <update id="updateSelective"  parameterType="java.util.HashMap">
+        update check_app_version
+          <set>
+            <if test="minVersion != null and minVersion != '' ">        
+                min_version = #{minVersion,jdbcType=VARCHAR},                
+            </if>
+            <if test="finalVersion != null and finalVersion != '' ">        
+                final_version = #{finalVersion,jdbcType=VARCHAR},                
+            </if>
+            <if test="osType != null and osType != '' ">        
+                os_type = #{osType,jdbcType=VARCHAR},                
+            </if>
+            <if test="title != null and title != '' ">        
+                title = #{title,jdbcType=VARCHAR},                
+            </if>
+            <if test="content != null and content != '' ">        
+                content = #{content,jdbcType=VARCHAR},                
+            </if>
+            <if test="downloadUrl != null and downloadUrl != '' ">        
+                download_url = #{downloadUrl,jdbcType=VARCHAR},                
+            </if>
+            <if test="detailPage != null and detailPage != '' ">        
+                detail_page = #{detailPage,jdbcType=VARCHAR},                
+            </if>
+            <if test="upgrade != null and upgrade != '' ">        
+                upgrade = #{upgrade,jdbcType=INTEGER},                
+            </if>
+            <if test="createTime != null and createTime != '' ">        
+                create_time = #{createTime,jdbcType=TIMESTAMP},                
+            </if>
+            <if test="updateTime != null and updateTime != '' ">        
+                update_time = #{updateTime,jdbcType=TIMESTAMP}                
+            </if>
+        </set>    
+        where id = #{id ,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="findByPrimary" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List" />
+        from check_app_version
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    
+    <select id="getCheckAppVersion" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List" />
+        from check_app_version
+        where os_type = #{_parameter}
+    </select>
+
+	<select id="findSelective" resultMap="BaseResultMap" parameterType="java.util.HashMap">
+        select
+        <include refid="Base_Column_List" />
+        from check_app_version
+        <include refid="searchBy"/>
+    </select>
+               
+    <select id="listSelective" resultMap="BaseResultMap" parameterType="java.util.HashMap">
+        select
+        <include refid="Base_Column_List" />
+        from check_app_version
+        <include refid="searchBy"/>
+		order by id desc
+    </select>
+    
+</mapper>

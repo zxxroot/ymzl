@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cashloan-cl" />
+        <module name="cashloan-core" />
+        <module name="cashloan-cr" />
+        <module name="cashloan-rc" />
+        <module name="cashloan-rule" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cashloan" target="1.8" />
+      <module name="cashloan-cl" target="1.8" />
+      <module name="cashloan-core" target="1.8" />
+      <module name="cashloan-cr" target="1.8" />
+      <module name="cashloan-rc" target="1.8" />
+      <module name="cashloan-rule" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

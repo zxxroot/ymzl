@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.nuxeo.common:nuxeo-common:10.3-I20180919_0126">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/nuxeo/common/nuxeo-common/10.3-I20180919_0126/nuxeo-common-10.3-I20180919_0126.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/nuxeo/common/nuxeo-common/10.3-I20180919_0126/nuxeo-common-10.3-I20180919_0126-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/nuxeo/common/nuxeo-common/10.3-I20180919_0126/nuxeo-common-10.3-I20180919_0126-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
